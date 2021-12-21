@@ -90,7 +90,7 @@ class Trainer(object):
     def _train_step(self, data_loader, step):
         if step == 0:
             # pretrain MI
-            for i in range(5):
+            for i in range(2):
                 self._train_step_MI(data_loader)
 
         tbar = tqdm(data_loader)
@@ -187,11 +187,11 @@ class Trainer(object):
                                               weight_decay=self.option.weight_decay)
         self.optim_classPredictor = optim.Adam(self.classPredictor.parameters(), lr=lr, betas=self.betad,
                                                weight_decay=self.option.weight_decay)
-        for i in range(15):
+        for i in range(20):
             self._train_step_baseline(data_loader, i)
             self._validate(self.valiloader, i)
         print('baseline pretrian finished')
-        for i in range(15):
+        for i in range(20):
             self._train_step_color(data_loader, i)
             self._validate(self.valiloader, i)
         print('bias brach pretrian finished')

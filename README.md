@@ -13,13 +13,16 @@ Download the colored mnist from [dataset](https://drive.google.com/file/d/11K-Gm
 Extracted the x.npy files to ./colored_mnist/
 
 ## Experiments
-We provide an example for coloredmnist with sigma^2=0.020, and one could change the parameters accordingly to conduct experiemnts on other settings.
 
-We provide a pretrained baseline model for sigma^2=0.020. Conduct training by
+We provide a pretrained baseline model for sigma^2=0.020, and one can conduct training for CSAD by
 ```
- python main.py -e csad --color_var 0.020 --checkpoint baseline/checkpoint_step_0028.pth --alpha 1 --tau 10 --lambda_ 1 --save_dir ./
+ python main.py -e csad0020 --color_var 0.020 --checkpoint baseline/pretraincheckpoint_step_0000.pth --alpha 1 --tau 10 --lambda_ 1 --save_dir ./
 ```
-After training, you should get a debiased digit classifer with accuracy around 0.943. We fix the random seed for reproducibility and please erase checkpoint if you conduct experiments with other random seeds and settings.
+After training, you should get a debiased digit classifer with accuracy around 0.943. 
+
+We fix the random seed for reproducibility. Please erase the checkpoint and change random seeds for experiments with differenet settings. 
+
+Please check our paper for details, and thanks for your interests.
 
 ## Citation
 ```

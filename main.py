@@ -41,10 +41,10 @@ def backend_setting(option):
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-e', '--exp_name', default='csad_0020', help='experiment name')
+    parser.add_argument('-e', '--exp_name', default='csad0020', help='experiment name')
     parser.add_argument('--color_var', default=0.020, type=float, help='variance for color distribution')
-    parser.add_argument('--checkpoint', default='csad_0020/pretraincheckpoint_step_0000.pth', help='checkpoint to resume')
-    # parser.add_argument('--checkpoint', default=None, help='checkpoint to resume')
+    # parser.add_argument('--checkpoint', default='baseline/pretraincheckpoint_step_0000.pth', help='checkpoint to resume')
+    parser.add_argument('--checkpoint', default=None, help='checkpoint to resume')
     parser.add_argument('--lr', default=0.00005, type=float, help='initial learning rate')
     parser.add_argument('--random_seed', default=1, type=int, help='random seed')
     parser.add_argument('--lr_decay_period', default=3, type=int, help='lr decay period')
