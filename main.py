@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# our code is developed based on Kim's public repo. Thanks Kim!
 import torch
 from torch.backends import cudnn
 
@@ -12,7 +11,6 @@ import argparse
 import torch.utils.data as data
 # import warnings
 # warnings.filterwarnings("ignore")
-import wandb
 
 def backend_setting(option):
     log_dir = os.path.join(option.save_dir, option.exp_name)
